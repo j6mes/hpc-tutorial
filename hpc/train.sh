@@ -9,12 +9,4 @@
 #SBATCH --reservation=nlp-course
 
 module load singularity/current
-
-env
-df -h
-echo $(pwd)
-
-TMPDIR=/local/$SLURM_JOB_ID
-mkdir -pv $TMPDIR
-singularity run --nv -B $TMPDIR:/ephemeral -B ~/rds/hpc-work/low-rank:/results ~/rds/low-rank.simg /work/scripts/job/run-cifar10-reg.sh
-rm -rfv $TMPDIR
+singularity run --nv -B ~/rds/hpc-work/tutorial:/results ~/rds/low-rank.simg python -m allennlp.run -f -s /results/cnn/ /work/configs/feverlite-s2v-cnn.json
