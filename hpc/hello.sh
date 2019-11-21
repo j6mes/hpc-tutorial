@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -x
+#!/usr/bin/env bash
 #SBATCH -A VLACHOS-SL2-CPU
 #SBATCH -p skylake
 #SBATCH --nodes=1
