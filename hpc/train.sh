@@ -6,6 +6,7 @@
 #SBATCH --mem=12G
 #SBATCH --time=12:00:00
 #SBATCH --gres=gpu:1
+#SBATCH --reservation=nlp-course
 
 module load singularity/current
 
