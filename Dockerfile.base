@@ -1,0 +1,19 @@
+FROM continuumio/miniconda3
+
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends \
+    zip \
+    gzip \
+    make \
+    automake \
+    gcc \
+    build-essential \
+    g++ \
+    cpp \
+    libc6-dev \
+    man-db \
+    autoconf \
+    pkg-config \
+    unzip
+
+RUN conda update -q conda
